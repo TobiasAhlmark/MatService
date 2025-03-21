@@ -1,0 +1,35 @@
+@using FoodOnDelivery.Core.Entities;
+@model List<Restaurant>
+
+@{
+    ViewData["Title"] = "Alla Restauranger";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null && !Model.Any())
+{
+    <p>Inga restauranger i listan.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Adress</th>
+                <th>Beskrivning</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var restaurant in Model)
+            {
+                <tr>
+                    <td>@restaurant.Name</td>
+                    <td>@restaurant.Address</td>
+                    <td>@restaurant.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

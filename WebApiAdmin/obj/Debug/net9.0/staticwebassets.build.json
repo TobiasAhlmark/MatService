@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "1w0AXQZ6EJXwiE9ZPGx5A4jjaW9WjUiyNHdh/BBVBkY=",
+  "Source": "webapiadmin",
+  "BasePath": "_content/webapiadmin",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

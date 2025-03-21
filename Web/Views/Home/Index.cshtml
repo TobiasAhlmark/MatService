@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a href="@Url.Action("Index", "Restaurant")" class="btn btn-primary">Visa alla restauranger</a>
+    <a href="@Url.Action("Create", "Restaurant")" class="btn btn-secondary">Skapa ny restaurang</a>
+    <a href="@Url.Action("Delete", "Restaurant")" class="btn btn-secondary">Ta bort restaurang</a>
+    <a href="@Url.Action("Update", "Restaurant")" class="btn btn-secondary">Uppdatera restaurang</a>
+    <a href="@Url.Action("Index", "Menu")" class="btn btn-secondary">Visa menyer</a>
+    <a href="@Url.Action("Create", "Menu")" class="btn btn-secondary">Lägg till menyer</a>
+</div>

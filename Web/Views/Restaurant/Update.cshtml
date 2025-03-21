@@ -1,0 +1,46 @@
+@using FoodOnDelivery.Core.Entities;
+@model List<Restaurant>
+
+@{
+    ViewData["Title"] = "Radera/Uppdatera Restaurang";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Inga restauranger i listan.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Namn</th>
+                <th>Adress</th>
+                <th>Beskrivning</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var restaurant in Model)
+            {
+                <tr>
+                    <td>@restaurant.Id</td>
+                    <td>@restaurant.Name</td>
+                    <td>@restaurant.Address</td>
+                    <td>@restaurant.Description</td>
+                    <td>
+                        <!-- Länkar för att uppdatera eller radera restaurangen -->
+                        <a asp-action="Update" asp-route-id="@restaurant.Id" class="btn btn-primary">Uppdatera</a>
+                        <a asp-action="Delete" asp-route-id="@restaurant.Id" class="btn btn-danger">Radera</a>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+}
+

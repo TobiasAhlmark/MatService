@@ -1,0 +1,49 @@
+@using FoodOnDelivery.Core.Entities;
+@model Restaurant
+
+@{
+    ViewData["Title"] = "Skapa ny restaurang";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    @* Anti-forgery token säkerställer att posten är giltig *@
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    @* Om du vill inkludera egenskaper för Menu kan du anpassa efter hur din Menu-modell ser ut.
+       Vanligtvis hanteras relaterade entiteter separat, men här är ett exempel på hur du skulle kunna göra:
+       
+    <div class="form-group">
+        <label asp-for="Menu.SomeProperty" class="control-label"></label>
+        <input asp-for="Menu.SomeProperty" class="form-control" />
+        <span asp-validation-for="Menu.SomeProperty" class="text-danger"></span>
+    </div>
+    *@
+
+    @* Orders hanteras vanligtvis inte vid skapande av en restaurang *@
+
+    <button type="submit" class="btn btn-primary">Skapa</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

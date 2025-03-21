@@ -1,0 +1,42 @@
+@using FoodOnDelivery.Core.Entities
+@model List<Menu>
+
+@{
+    ViewData["Title"] = "Menyöversikt";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Inga menyer hittades.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titel</th>
+                <th>Antal rätter</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var menu in Model)
+            {
+                <tr>
+                    <td>@menu.Id</td>
+                    <td>@menu.Title</td>
+                    <td>@menu.Items.Count</td>
+                    <td>
+                        <!-- Länkar för att hantera menyer -->
+                        <a asp-action="Details" asp-route-id="@menu.Id" class="btn btn-info">Visa</a>
+                        <a asp-action="Edit" asp-route-id="@menu.Id" class="btn btn-primary">Redigera</a>
+                        <a asp-action="Delete" asp-route-id="@menu.Id" class="btn btn-danger">Radera</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

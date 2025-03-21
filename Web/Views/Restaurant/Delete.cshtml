@@ -1,0 +1,49 @@
+@using FoodOnDelivery.Core.Entities;
+@model List<Restaurant>
+
+@{
+    ViewData["Title"] = "Radera Restaurang";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Inga restauranger i listan.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Namn</th>
+                <th>Adress</th>
+                <th>Beskrivning</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var restaurant in Model)
+            {
+                <tr>
+                    <td>@restaurant.Id</td>
+                    <td>@restaurant.Name</td>
+                    <td>@restaurant.Address</td>
+                    <td>@restaurant.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<hr />
+
+<h3>Radera restaurang</h3>
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="restaurantId">Ange restaurangens ID:</label>
+        <input type="number" name="id" class="form-control" id="restaurantId" />
+    </div>
+    <button type="submit" class="btn btn-danger">Radera</button>
+</form>
