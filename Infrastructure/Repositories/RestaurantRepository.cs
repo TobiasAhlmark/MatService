@@ -35,7 +35,7 @@ public class RestaurantRepository : IRepo<Restaurant>
 
     public async Task<List<Restaurant>> GetAllAsync()
     {
-        return await _db.Restaurants.ToListAsync();
+        return await _db.Restaurants.Include(m => m.Menu).ThenInclude(i => i.Items).ToListAsync();
     }
 
     public async Task<Restaurant> GetByIdAsync(int id)

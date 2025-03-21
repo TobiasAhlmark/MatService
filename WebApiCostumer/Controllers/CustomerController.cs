@@ -32,26 +32,46 @@ public class CustomerController : ControllerBase
     public async Task<IActionResult> GetRestaurants()
     {
         var restaurants = await _repoRestaurant.GetAllAsync();
-        return Ok(restaurants.Select(restaurant => new RestaurantResponse
-        (
+
+        var response = restaurants.Select(restaurant => new RestaurantResponse(
             restaurant.Name,
             restaurant.Address,
             restaurant.Description,
-            restaurant.Menu
-        )));
+            new MenuResponse(
+                restaurant.Menu.Title,
+                restaurant.Menu.Items.Select(item => new MenuItemResponse(
+                    item.Name,
+                    item.Price,
+                    item.Description,
+                    item.IsVegetarian
+                )).ToList()
+            )
+        ));
+
+        return Ok(response);
     }
 
     [HttpGet("restaurants/{id}")]
     public async Task<IActionResult> GetRestaurantById(int id)
     {
-        var restaurant = await _repoRestaurant.GetByIdAsync(id);
-        return Ok(new RestaurantResponse
-        (
+        var restaurants = await _repoRestaurant.GetByIdAsync(id);
+        var restaurant = restaurants;
+        var response = new RestaurantResponse(
             restaurant.Name,
             restaurant.Address,
             restaurant.Description,
-            restaurant.Menu
-        ));
+            new MenuResponse(
+                restaurant.Menu.Title,
+                restaurant.Menu.Items.Select(item => new MenuItemResponse(
+                    item.Name,
+                    item.Price,
+                    item.Description,
+                    item.IsVegetarian
+                )).ToList()
+            )
+        );
+
+        return Ok(response);
     }
 
     [HttpGet("orders")]
@@ -142,7 +162,19 @@ public record RestaurantResponse
     string Name,
     string Address,
     string Description,
-    Menu Menu
+    MenuResponse Menu
+);
+
+public record MenuItemResponse(
+    string Name,
+    decimal Price,
+    string Description,
+    bool IsVegetarian
+);
+
+public record MenuResponse(
+    string Title,
+    List<MenuItemResponse> Items
 );
 
 public record OrderRequest
