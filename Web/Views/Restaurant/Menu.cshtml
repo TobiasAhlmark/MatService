@@ -1,0 +1,33 @@
+@using FoodOnDelivery.Core.Entities;
+@using FoodOnDelivery.Web.Models;
+@model Restaurant
+
+<h2>@Model.Name</h2>
+<img src="@Url.Content($"~/Bilder/{Model.Name.Replace(" ", "")}.png")" alt="Bild på @Model.Name"
+    class="restaurant-image" />
+
+<p><strong>Adress:</strong> @Model.Address</p>
+<p>@Model.Description</p>
+
+<div id="order-sidebar">
+    @Html.Partial("_OrderSidebar", new OrderSummaryViewModel { Items = new List<OrderItem>(), TotalCost = 0 })
+</div>
+
+@if (Model.Menu.Items != null && Model.Menu.Items.Any())
+{
+    <section class="menu-items">
+        @foreach (var dish in Model.Menu.Items)
+        {
+            <article class="menu-item">
+                <h3>@dish.Name</h3>
+                <p>@dish.Description</p>
+                <p>@dish.Price.ToString("c")</p>
+                <button type="button" class="choose-button">Välj</button>
+            </article>
+        }
+    </section>
+}
+else
+{
+    <p>Inga menyer tillgängliga.</p>
+}

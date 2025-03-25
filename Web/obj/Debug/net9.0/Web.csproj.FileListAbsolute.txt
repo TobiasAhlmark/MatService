@@ -152,11 +152,11 @@ C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\ProjektArbete\web\obj\Debug\net9
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\ProjektArbete\web\obj\Debug\net9.0\ref\Web.dll
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\appsettings.json
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.staticwebassets.endpoints.json
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.staticwebassets.runtime.json
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.staticwebassets.endpoints.json
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.exe
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.deps.json
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.runtimeconfig.json
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\bin\Debug\net9.0\Web.deps.json
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\bin\Debug\net9.0\Web.runtimeconfig.json
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.dll
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Web.pdb
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
@@ -224,7 +224,7 @@ C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\scopedcss\bundle\Web.styles.css
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\scopedcss\projectbundle\Web.bundle.scp.css
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\f61f1xnw7n-b9sayid5wm.gz
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\f61f1xnw7n-ktkj6bz9j4.gz
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\ds8f6vp0dx-61n19gt1b8.gz
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\2wck7lvexw-xtxxf3hu2r.gz
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\7ygf986cjc-bqjiyaj88i.gz
@@ -297,9 +297,10 @@ C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Web.props
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\Web.csproj.Up2Date
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\obj\Debug\net9.0\Web.csproj.Up2Date
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\Web.dll
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\refint\Web.dll
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\Web.pdb
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\Web.genruntimeconfig.cache
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\ref\Web.dll
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\obj\Debug\net9.0\Web.genruntimeconfig.cache
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\obj\Debug\net9.0\ref\Web.dll
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\clpfg4nefy-vby4usm23g.gz

@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\Web.zmm9ivslsu.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\Bilder\\McDonalds.png",
+      "PackagePath": "staticwebassets\\Bilder\\McDonalds.png"
+    },
+    {
+      "Id": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\Bilder\\Roma.png",
+      "PackagePath": "staticwebassets\\Bilder\\Roma.png"
+    },
+    {
+      "Id": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\Bilder\\ÖlRepubliken.png",
+      "PackagePath": "staticwebassets\\Bilder\\ÖlRepubliken.png"
+    },
+    {
+      "Id": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\css\\restaurant.css",
+      "PackagePath": "staticwebassets\\css\\restaurant.css"
+    },
+    {
       "Id": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -6,7 +6,7 @@ using FoodOnDelivery.Core.Services;
 namespace FoodOnDelivery.WebApiController.Costumer;
 
 [ApiController]
-[Route("/api/costumer")]
+[Route("/api/customer")]
 public class CustomerController : ControllerBase
 {
     private readonly RestaurantRepository _repoRestaurant;
@@ -34,6 +34,7 @@ public class CustomerController : ControllerBase
         var restaurants = await _repoRestaurant.GetAllAsync();
 
         var response = restaurants.Select(restaurant => new RestaurantResponse(
+            restaurant.Id,
             restaurant.Name,
             restaurant.Address,
             restaurant.Description,
@@ -57,6 +58,7 @@ public class CustomerController : ControllerBase
         var restaurants = await _repoRestaurant.GetByIdAsync(id);
         var restaurant = restaurants;
         var response = new RestaurantResponse(
+            restaurant.Id,
             restaurant.Name,
             restaurant.Address,
             restaurant.Description,
@@ -159,8 +161,15 @@ public class CustomerController : ControllerBase
     }
 }
 
+// [HttpPost("order/changestatus")]
+// public async Task<IActionResult> ChangeOrderStatus()
+// {
+            
+// }
+
 public record RestaurantResponse
 (
+    int Id,
     string Name,
     string Address,
     string Description,

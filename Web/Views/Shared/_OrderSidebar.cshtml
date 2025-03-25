@@ -1,0 +1,21 @@
+@using FoodOnDelivery.Web.Models;
+@model FoodOnDelivery.Web.Models.OrderSummaryViewModel
+
+<div class="order-sidebar">
+    <h3>Din Order</h3>
+    <ul>
+        @if (Model.Items != null && Model.Items.Any())
+        {
+            foreach (var item in Model.Items)
+            {
+                <li>@item.MenuItem.Name - @item.Quantity x @item.PriceAtOrderTime.ToString("c")</li>
+            }
+        }
+        else
+        {
+            <li>Inga varor i ordern</li>
+        }
+    </ul>
+    <p>Total: @Model.TotalCost.ToString("C")</p>
+</div>
+

@@ -7,29 +7,29 @@
 
 <h2>@ViewData["Title"]</h2>
 
-@if (Model == null && !Model.Any())
+@if (Model == null || !Model.Any())
 {
     <p>Inga restauranger i listan.</p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Namn</th>
-                <th>Adress</th>
-                <th>Beskrivning</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var restaurant in Model)
-            {
-                <tr>
-                    <td>@restaurant.Name</td>
-                    <td>@restaurant.Address</td>
-                    <td>@restaurant.Description</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <section class="restaurant-grid">
+
+        @foreach (var restaurant in Model)
+        {
+            <article class="restaurant-card">
+                <img src="@Url.Content($"~/Bilder/{restaurant.Name.Replace(" ", "")}.png")" alt="Bild på @restaurant.Name"
+                    class="restaurant-image" />
+                <div class="restaurant-info">
+                    <h3>@restaurant.Name</h3>
+                    <p><strong>Adress:</strong> @restaurant.Address</p>
+                    <p>@restaurant.Description</p>
+                    <a href="@Url.Action("Menu", "Restaurant", new { id = restaurant.Id })" class="menu-button">
+                        Meny
+                    </a>    
+                </div>
+            </article>
+        }
+
+    </section>
 }

@@ -1,24 +1,26 @@
-using System.Diagnostics;
 using FoodOnDelivery.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Web.Controllers;
 
 public class RestaurantController : Controller
 {
+    private readonly ILogger<RestaurantController> _logger;
     private readonly HttpClient _httpClient;
 
-    public RestaurantController(HttpClient httpClient)
+    public RestaurantController(ILogger<RestaurantController> logger, HttpClient httpClient)
     {
+        _logger = logger;
         _httpClient = httpClient;
     }
 
     public async Task<IActionResult> Index()
     {
-        List<Restaurant> restaurants = null;
+        List<Restaurant> restaurants;
         try
         {
-            restaurants = await _httpClient.GetFromJsonAsync<List<Restaurant>>("http://localhost:5114/api/admin/restaurant");
+            restaurants = await _httpClient.GetFromJsonAsync<List<Restaurant>>("http://localhost:5250/api/customer/restaurants");
         }
         catch (Exception ex)
         {
@@ -32,6 +34,30 @@ public class RestaurantController : Controller
     public IActionResult Create()
     {
         return View();
+    }
+
+    public async Task<IActionResult> Menu(int id)
+    {
+        try
+        {
+            var restaurant = await _httpClient.GetFromJsonAsync<Restaurant>($"http://localhost:5250/api/customer/restaurants/{id}");
+
+            if (restaurant == null)
+            {
+                return NotFound();
+            }
+
+            return View(restaurant);
+        }
+        catch (HttpRequestException ex)
+        {
+            return StatusCode(StatusCodes.Status503ServiceUnavailable, "API-tjänsten är inte tillgänglig just nu.");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ett oväntat fel inträffade i RestaurantById");
+            return StatusCode(StatusCodes.Status500InternalServerError, "Ett oväntat fel inträffade.");
+        }
     }
 
     // POST: Restaurant/Create
