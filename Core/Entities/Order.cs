@@ -8,6 +8,8 @@ public class Order
     public Customer Customer { get; set; }
 
     public List<OrderItem> OrderItems { get; set; } = new();
+    public decimal TotalPrice { get; set; }
+
 
     public OrderStatus Status { get; set; } = OrderStatus.Received;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

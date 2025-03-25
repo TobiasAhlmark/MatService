@@ -15,8 +15,8 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 ---
 
 ## Checklista för inlämning
-- [ ] Jag har läst instruktionerna noggrant.
-- [ ] Jag har ställt frågor om det är något som är otydligt.
+- [x] Jag har läst instruktionerna noggrant.
+- [x] Jag har ställt frågor om det är något som är otydligt.
 - [ ] Jag har tagit bort oanvänd kod.
 - [ ] Jag har tagit bort onödiga kommentarer.
 - [ ] Jag har formaterat min kod fint.
@@ -29,7 +29,7 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 ## Betygskriterier
 
 ### För G
-- [ ] Användning av **Asp.Net**, **EF Core** och **SQLite**.
+- [x] Användning av **Asp.Net**, **EF Core** och **SQLite**.
 - [ ] Samtliga krav för hemsidan är uppfyllda.
 - [ ] Samtliga krav för REST-APIet är uppfyllda.
 - [ ] Minst 2 av 4 systemregler implementerade.

@@ -106,6 +106,8 @@ public class CustomerController : ControllerBase
     [HttpPost("order")]
     public async Task<IActionResult> CreateOrder(OrderRequest request)
     {
+        // public decimal TotalPrice => OrderItems.Sum(item => item.PriceAtOrderTime * item.Quantity);
+
         var customer = await _repoCustomer.GetCustomerByPhoneNumber(request.CostumerPhone);
 
         if (customer == null)
