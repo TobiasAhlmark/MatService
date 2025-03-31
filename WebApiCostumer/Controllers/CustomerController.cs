@@ -13,19 +13,22 @@ public class CustomerController : ControllerBase
     private readonly OrderRepository _repoOrder;
     private readonly CustomerRepository _repoCustomer;
     private readonly ItemRepository _repoItem;
+    private readonly orderItemRepository _repoOrderItem;
 
     public CustomerController
     (
         RestaurantRepository restaurantRepository,
         OrderRepository orderRepository,
         CustomerRepository customerRepository,
-        ItemRepository itemRepository
+        ItemRepository itemRepository,
+        orderItemRepository orderItemRepository
     )
     {
         _repoRestaurant = restaurantRepository;
         _repoOrder = orderRepository;
         _repoCustomer = customerRepository;
         _repoItem = itemRepository;
+        _repoOrderItem = orderItemRepository;
     }
 
     [HttpGet("restaurants")]
@@ -41,6 +44,7 @@ public class CustomerController : ControllerBase
             new MenuResponse(
                 restaurant.Menu.Title,
                 restaurant.Menu.Items.Select(item => new MenuItemResponse(
+                    item.Id,
                     item.Name,
                     item.Price,
                     item.Description,
@@ -65,6 +69,7 @@ public class CustomerController : ControllerBase
             new MenuResponse(
                 restaurant.Menu.Title,
                 restaurant.Menu.Items.Select(item => new MenuItemResponse(
+                    item.Id,
                     item.Name,
                     item.Price,
                     item.Description,
@@ -74,6 +79,19 @@ public class CustomerController : ControllerBase
         );
 
         return Ok(response);
+    }
+
+    [HttpPost("orderitem")]
+    public async Task<IActionResult> AddOrderItem(OrderItemDto orderItemDto)
+    {
+        var newOrderItem = new OrderItem
+        {
+            MenuItemId = orderItemDto.MenuItemId,
+            Quantity = orderItemDto.Quantity
+        };
+        await _repoOrderItem.AddAsync(newOrderItem);
+        return Ok(); 
+
     }
 
     [HttpGet("orders")]
@@ -159,6 +177,7 @@ public class CustomerController : ControllerBase
             order.Restaurant
         ));
     }
+
 }
 
 // [HttpPost("order/changestatus")]
@@ -177,6 +196,7 @@ public record RestaurantResponse
 );
 
 public record MenuItemResponse(
+    int id,
     string Name,
     decimal Price,
     string Description,

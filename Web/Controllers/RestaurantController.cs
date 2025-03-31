@@ -1,6 +1,5 @@
 using FoodOnDelivery.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Web.Controllers;
 
@@ -21,6 +20,15 @@ public class RestaurantController : Controller
         try
         {
             restaurants = await _httpClient.GetFromJsonAsync<List<Restaurant>>("http://localhost:5250/api/customer/restaurants");
+            
+            foreach (var item in restaurants)
+            {
+                Console.WriteLine($"{item.Id} - {item.Menu.Title} - hämtades");
+                foreach (var items in item.Menu.Items)
+                {
+                    Console.WriteLine($"{items.Id} - {items.Name} - hämtades");
+                }
+            }
         }
         catch (Exception ex)
         {

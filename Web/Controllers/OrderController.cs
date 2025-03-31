@@ -1,60 +1,76 @@
-using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Web.Models;
-using FoodOnDelivery.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Web.Controllers;
 
 public class OrderController : Controller
 {
-    private readonly HttpClient _httpClient;
-    private readonly IOrderService _orderService;
+    private readonly Basket _basket;
 
-    public OrderController(HttpClient httpClient, IOrderService service)
+    public OrderController(Basket basket)
     {
-        _httpClient = httpClient;
-        _orderService = service;
+        _basket = basket;
     }
 
-    public IActionResult OrderSummary()
+    public IActionResult Index()
     {
-        var items = _orderService.GetCurrentOrderItems();
-        var total = _orderService.CalculateTotal();
-        // Skicka med informationen till vyn
-        var viewModel = new OrderSummaryViewModel
+        var basketJson = HttpContext.Session.GetString("Basket");
+        Basket basket;
+        if (string.IsNullOrEmpty(basketJson))
         {
-            Items = items,
-            TotalCost = total
+            basket = new Basket();
+        }
+        else
+        {
+            basket = JsonConvert.DeserializeObject<Basket>(basketJson);
+        }
+
+        var viewmodel = new BasketViewModel
+        {
+            Items = basket.Items
         };
-        return View(viewModel);
+        foreach (var item in viewmodel.Items)
+        {
+            Console.WriteLine($"{item.Name} - {item.MenuItemId} - {item.PriceAtSelection}");
+        }
+        return View(viewmodel);
     }
 
     [HttpPost]
-    public IActionResult AddItems(OrderItem orderItem)
+    public async Task<IActionResult> AddItem(int menuItemId, string name, decimal itemPrice, int quantity)
     {
-        try
+        var basketJson = HttpContext.Session.GetString("Basket");
+        Basket basket;
+        if (string.IsNullOrEmpty(basketJson))
         {
-            _orderService.AddItem(orderItem);
-
-            return RedirectToAction("OrderSummary");
+            // Om ingen Basket finns, skapa en ny
+            basket = new Basket();
         }
-        catch (Exception ex)
+        else
         {
-            return StatusCode(500, "Något gick fel när ordern lades till.");
+            // Deserialisera Basket från sessionen
+            basket = JsonConvert.DeserializeObject<Basket>(basketJson);
         }
-    }
 
-    public IActionResult OrderSidebar()
-    {
-        var items = _orderService.GetCurrentOrderItems();
-        var total = _orderService.CalculateTotal();
-        var viewModel = new OrderSummaryViewModel
+        var basketItem = new BasketItem
         {
-            Items = items,
-            TotalCost = total
+            MenuItemId = menuItemId,
+            Name = name,
+            Quantity = quantity,
+            PriceAtSelection = itemPrice
         };
-        return PartialView("_OrderSidebar", viewModel);
+
+        basket.AddItem(basketItem);
+
+        HttpContext.Session.SetString("Basket", JsonConvert.SerializeObject(basket));
+
+        return RedirectToAction("Index", "Order");
     }
+
+    // await _httpClient.PostAsJsonAsync<int>("http://localhost:5250/api/customer/restaurant", restaurant);
+
+
 
 
 }

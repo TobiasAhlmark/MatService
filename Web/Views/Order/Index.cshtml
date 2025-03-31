@@ -1,0 +1,84 @@
+@using FoodOnDelivery.Web.Models;
+@model BasketViewModel
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Din Varukorg</title>
+  <!-- Använd Bootstrap för enkel styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container my-5">
+    <h1>Din varukorg</h1>
+
+    <!-- Lista över orderrader -->
+    <table class="table table-bordered mt-4">
+      <thead class="thead-light">
+        <tr>
+          <th>Produkt</th>
+          <th>Antal</th>
+          <th>Pris per enhet</th>
+          <th>Summa</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (Model.Items != null && Model.Items.Any())
+        {
+          foreach (var item in Model.Items)
+          {
+            <tr>
+              <td>@item.Name</td>
+              <td>@item.Quantity</td>
+              <td>@item.PriceAtSelection.ToString("c")</td>
+              <td>@(item.Quantity * item.PriceAtSelection).ToString("c")</td>
+            </tr>
+          }
+        }
+        else
+        {
+          <tr>
+            <td colspan="4">Din varukorg är tom</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <!-- Summering av order -->
+    <div class="d-flex justify-content-end">
+      <h4>Total summa: @Model.TotalCost.ToString("c")</h4>
+    </div>
+
+    <hr>
+
+    <!-- Betalningsalternativ -->
+    <h2>Betalning</h2>
+    <p>Välj betalningsmetod och ange dina leveransuppgifter:</p>
+    <form method="post" action="/Cart/Checkout">
+      <div class="form-group">
+        <label for="paymentMethod">Betalningsmetod</label>
+        <select class="form-control" id="paymentMethod" name="paymentMethod">
+          <option value="card">Kredit-/bankkort</option>
+          <option value="swish">Swish</option>
+          <option value="invoice">Faktura</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="deliveryAddress">Leveransadress</label>
+        <input type="text" class="form-control" id="deliveryAddress" name="deliveryAddress"
+          placeholder="Ange din adress">
+      </div>
+      <!-- Du kan även lägga till fler fält, t.ex. telefonnummer eller e-post -->
+      <button type="submit" class="btn btn-success">Genomför beställning</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

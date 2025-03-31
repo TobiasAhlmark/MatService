@@ -1,21 +1,40 @@
 @using FoodOnDelivery.Web.Models;
-@model FoodOnDelivery.Web.Models.OrderSummaryViewModel
+@model FoodOnDelivery.Web.Models.BasketViewModel
 
-<div class="order-sidebar">
-    <h3>Din Order</h3>
-    <ul>
-        @if (Model.Items != null && Model.Items.Any())
-        {
-            foreach (var item in Model.Items)
+@if (Model == null)
+{
+    <div class="order-sidebar">
+        <h3>Din Order</h3>
+        <p>Orderdata saknas.</p>
+    </div>
+}
+else
+{
+    <div class="order-sidebar">
+        <h3>Din Order</h3>
+        <ul>
+            @if (Model.Items != null && Model.Items.Any())
             {
-                <li>@item.MenuItem.Name - @item.Quantity x @item.PriceAtOrderTime.ToString("c")</li>
+                foreach (var item in Model.Items)
+                {
+                    if (item.MenuItem != null)
+                    {
+                        <li>@item.MenuItem.Name - @item.Quantity x @item.PriceAtSelection.ToString()</li>
+                    }
+                    else
+                    {
+                        <li>Okänt varunamn - @item.Quantity x @item.PriceAtSelection.ToString("c")</li>
+                    }
+                }
             }
-        }
-        else
-        {
-            <li>Inga varor i ordern</li>
-        }
-    </ul>
-    <p>Total: @Model.TotalCost.ToString("C")</p>
-</div>
-
+            else
+            {
+                <li>Inga varor i ordern</li>
+            }
+        </ul>
+        <p>Total: @Model.TotalCost.ToString("C")</p>
+        <a class="btn btn-primary" asp-controller="Order" asp-action="Index">
+            Gå till varukorg
+        </a>
+    </div>
+}

@@ -10,20 +10,24 @@
 <p>@Model.Description</p>
 
 <div id="order-sidebar">
-    @Html.Partial("_OrderSidebar", new OrderSummaryViewModel { Items = new List<OrderItem>(), TotalCost = 0 })
+    <partial name="_OrderSidebar" model="new BasketViewModel { Items = new List<BasketItem>() }" />
 </div>
 
 @if (Model.Menu.Items != null && Model.Menu.Items.Any())
 {
     <section class="menu-items">
-        @foreach (var dish in Model.Menu.Items)
+        @foreach (var item in Model.Menu.Items)
         {
-            <article class="menu-item">
-                <h3>@dish.Name</h3>
-                <p>@dish.Description</p>
-                <p>@dish.Price.ToString("c")</p>
-                <button type="button" class="choose-button">Välj</button>
-            </article>
+            <div class="menu-item">
+                <p>@item.Name - @item.Price.ToString("c")</p>
+                <form asp-controller="Order" asp-action="AddItem" method="post">
+                    <input type="hidden" name="menuItemId" value="@item.Id" />
+                    <input type="hidden" name="menuItemName" value="@item.Name" />
+                    <input type="hidden" name="itemPrice" value="@item.Price" />
+                    <input type="hidden" name="quantity" value="1" />
+                    <button type="submit" class="choose-button">Välj</button>
+                </form>
+            </div>
         }
     </section>
 }

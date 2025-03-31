@@ -1,4 +1,4 @@
-
+using FoodOnDelivery.Web.Models;
 
 internal class Program
 {
@@ -6,20 +6,26 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         builder.Services.AddControllersWithViews();
         builder.Services.AddHttpClient("MyApi", client =>
        {
            client.BaseAddress = new Uri("https://localhost:7140");
        });
-        // builder.Services.AddScoped<IRepo<MenuItem>, ItemRepository>();
-        // builder.Services.AddScoped<IRepo<Order>, OrderRepository>();
-        // builder.Services.AddScoped<IRepo<Restaurant>, RestaurantRepository>();
-        // builder.Services.AddDbContext<AppDbContext>(options =>
-        // options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+       builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession(options =>
+       {
+           options.IdleTimeout = TimeSpan.FromMinutes(30);
+           options.Cookie.HttpOnly = true;
+           options.Cookie.IsEssential = true;
+       });
+        builder.Services.AddScoped<Basket>();
+        builder.Services.AddScoped<BasketItem>();
+
 
         var app = builder.Build();
 
+        app.UseSession();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
