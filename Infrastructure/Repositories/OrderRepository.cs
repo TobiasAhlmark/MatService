@@ -37,6 +37,7 @@ public class OrderRepository : IRepo<Order>
         return await _db.Orders
             .Include(o => o.Customer)
             .Include(o => o.OrderItems)
+            .ThenInclude(oi => oi.MenuItem)
             .FirstOrDefaultAsync(o => o.Id == id) 
             ?? throw new InvalidOperationException($"Order with ID {id} not found.");
     }

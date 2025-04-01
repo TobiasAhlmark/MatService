@@ -100,7 +100,7 @@ public async Task<IActionResult> CreateOrder(string customerName, int customerPh
         PhoneNumber = customerPhone,
         Address = deliveryAddress
     };
-    await _costumerRepo.AddAsync(customer);
+    var orderCustomer = await _costumerRepo.AddAsyncWithResponse(customer);
     
     var orderItems = basket.Items.Select(item => new OrderItem
     {
@@ -111,12 +111,15 @@ public async Task<IActionResult> CreateOrder(string customerName, int customerPh
 
     var order = new Order
     {
-        Customer = customer,
+        CustomerId = orderCustomer.Id,
         OrderItems = orderItems,
         CourierId = 1,
         RestaurantId = basket.RestaurantId.Value
     };
     Console.WriteLine(order.RestaurantId);
+    Console.WriteLine(order.CustomerId);
+
+    Console.WriteLine($"courier = {order.CourierId} - customerId = {order.CustomerId} - restaurangId = {order.RestaurantId}");
     await _orderRepo.AddAsync(order);
 
     HttpContext.Session.Remove("Basket");

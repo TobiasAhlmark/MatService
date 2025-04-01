@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using System.Reflection.Metadata;
 using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Core.Interfaces;
 using FoodOnDelivery.Infrastructure.DB;
@@ -16,11 +17,20 @@ public class CustomerRepository : IRepo<Customer>
     }
     public async Task AddAsync(Customer entity)
     {
-        var customer = _db.Costumers.FirstOrDefaultAsync(c => c.PhoneNumber == entity.PhoneNumber);
-        if(customer != null)
+
+    }
+    public async Task<Customer> AddAsyncWithResponse(Customer entity)
+    {
+        var customer = await _db.Costumers.FirstOrDefaultAsync(c => c.PhoneNumber == entity.PhoneNumber);
+        if (customer == null)
         {
-        await _db.Costumers.AddAsync(entity);
-        await _db.SaveChangesAsync();
+            await _db.Costumers.AddAsync(entity);
+            await _db.SaveChangesAsync();
+            return entity;
+        }
+        else
+        {
+            return customer;
         }
     }
 

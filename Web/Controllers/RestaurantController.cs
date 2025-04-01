@@ -16,6 +16,7 @@ public class RestaurantController : Controller
 
     public async Task<IActionResult> Index()
     {
+        
         List<Restaurant> restaurants;
         try
         {

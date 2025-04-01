@@ -13,7 +13,7 @@ public class CustomerController : ControllerBase
     private readonly OrderRepository _repoOrder;
     private readonly CustomerRepository _repoCustomer;
     private readonly ItemRepository _repoItem;
-    private readonly orderItemRepository _repoOrderItem;
+    private readonly OrderItemRepository _repoOrderItem;
 
     public CustomerController
     (
@@ -21,7 +21,7 @@ public class CustomerController : ControllerBase
         OrderRepository orderRepository,
         CustomerRepository customerRepository,
         ItemRepository itemRepository,
-        orderItemRepository orderItemRepository
+        OrderItemRepository orderItemRepository
     )
     {
         _repoRestaurant = restaurantRepository;
