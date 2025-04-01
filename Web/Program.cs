@@ -1,4 +1,9 @@
+using FoodOnDelivery.Core.Interfaces;
+using FoodOnDelivery.Infrastructure.DB;
+using FoodOnDelivery.Infrastructure.Repositories;
+using FoodOnDelivery.Infrastructure.ServiceCollection;
 using FoodOnDelivery.Web.Models;
+using Microsoft.EntityFrameworkCore;
 
 internal class Program
 {
@@ -12,15 +17,17 @@ internal class Program
            client.BaseAddress = new Uri("https://localhost:7140");
        });
 
-       builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession(options =>
        {
            options.IdleTimeout = TimeSpan.FromMinutes(30);
            options.Cookie.HttpOnly = true;
            options.Cookie.IsEssential = true;
        });
+        builder.Services.AddInfrastructure();
         builder.Services.AddScoped<Basket>();
         builder.Services.AddScoped<BasketItem>();
+        builder.Services.AddScoped<OrderRepository>();
 
 
         var app = builder.Build();

@@ -32,8 +32,8 @@ public static class InfrastructureServiceCollectionExtensions
         services.AddScoped<IRepo<Order>, OrderRepository>();
         services.AddScoped<OrderRepository>();
 
-        services.AddScoped<IRepo<OrderItem>, orderItemRepository>();
-        services.AddScoped<orderItemRepository>();
+        services.AddScoped<IRepo<OrderItem>, OrderItemRepository>();
+        services.AddScoped<OrderItemRepository>();
 
 
         // Registrera andra infrastruktur-relaterade tjänster här om du vill

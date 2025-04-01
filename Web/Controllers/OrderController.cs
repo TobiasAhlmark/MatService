@@ -1,16 +1,31 @@
 using FoodOnDelivery.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using FoodOnDelivery.Core.Entities;
+using FoodOnDelivery.Infrastructure.Repositories;
 
 namespace Web.Controllers;
 
 public class OrderController : Controller
 {
     private readonly Basket _basket;
+    private readonly OrderRepository _orderRepo;
+    private readonly CustomerRepository _costumerRepo;
+    private readonly OrderItemRepository _orderItemRepo;
 
-    public OrderController(Basket basket)
+    public OrderController
+    (
+        Basket basket, 
+        OrderRepository orderRepository, 
+        CustomerRepository customerRepository,
+        OrderItemRepository orderItemRepository
+    )
+
     {
         _basket = basket;
+        _orderRepo = orderRepository;
+        _costumerRepo = customerRepository;
+        _orderItemRepo = orderItemRepository;
     }
 
     public IActionResult Index()
@@ -30,35 +45,31 @@ public class OrderController : Controller
         {
             Items = basket.Items
         };
-        foreach (var item in viewmodel.Items)
-        {
-            Console.WriteLine($"{item.Name} - {item.MenuItemId} - {item.PriceAtSelection}");
-        }
+        
         return View(viewmodel);
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddItem(int menuItemId, string name, decimal itemPrice, int quantity)
+    public async Task<IActionResult> AddItem(int menuItemId, string menuItemName, decimal itemPrice, int quantity, int RestaurantId)
     {
         var basketJson = HttpContext.Session.GetString("Basket");
         Basket basket;
         if (string.IsNullOrEmpty(basketJson))
         {
-            // Om ingen Basket finns, skapa en ny
             basket = new Basket();
         }
         else
         {
-            // Deserialisera Basket från sessionen
             basket = JsonConvert.DeserializeObject<Basket>(basketJson);
         }
 
         var basketItem = new BasketItem
         {
             MenuItemId = menuItemId,
-            Name = name,
+            Name = menuItemName,
             Quantity = quantity,
-            PriceAtSelection = itemPrice
+            PriceAtSelection = itemPrice,
+            RestaurantId = RestaurantId
         };
 
         basket.AddItem(basketItem);
@@ -68,10 +79,62 @@ public class OrderController : Controller
         return RedirectToAction("Index", "Order");
     }
 
-    // await _httpClient.PostAsJsonAsync<int>("http://localhost:5250/api/customer/restaurant", restaurant);
+[HttpPost]
+public async Task<IActionResult> CreateOrder(string customerName, int customerPhone, string deliveryAddress)
+{
+    var basketJson = HttpContext.Session.GetString("Basket");
+    if (string.IsNullOrEmpty(basketJson))
+    {
+        return RedirectToAction("Index", "Order");
+    }
 
+    var basket = JsonConvert.DeserializeObject<Basket>(basketJson);
 
+    foreach (var item in basket.Items)
+    {
+        Console.WriteLine($"Id = {item.MenuItemId} - Quantity = {item.Quantity}");
+    }
+    var customer = new Customer
+    {
+        Name = customerName,
+        PhoneNumber = customerPhone,
+        Address = deliveryAddress
+    };
+    await _costumerRepo.AddAsync(customer);
+    
+    var orderItems = basket.Items.Select(item => new OrderItem
+    {
+        MenuItemId = item.MenuItemId,
+        Quantity = item.Quantity,
+        PriceAtOrderTime = item.PriceAtSelection
+    }).ToList();
 
+    var order = new Order
+    {
+        Customer = customer,
+        OrderItems = orderItems,
+        CourierId = 1,
+        RestaurantId = basket.RestaurantId.Value
+    };
+    Console.WriteLine(order.RestaurantId);
+    await _orderRepo.AddAsync(order);
 
+    HttpContext.Session.Remove("Basket");
+
+    return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
+}
+
+    [HttpGet]
+    public async Task<IActionResult> OrderConfirmation(int orderId)
+    {
+        var order = await _orderRepo.GetByIdAsync(orderId);
+
+        if (order == null)
+        {
+            return View(order);
+        }
+
+        return View(order);
+    }
 }
 

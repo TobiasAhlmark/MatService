@@ -3,7 +3,6 @@
 
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
   <!-- Använd Bootstrap för enkel styling -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
   <div class="container my-5">
     <h1>Din varukorg</h1>
@@ -55,24 +53,23 @@
 
     <hr>
 
-    <!-- Betalningsalternativ -->
+    <!-- Betalningsalternativ och kunduppgifter -->
     <h2>Betalning</h2>
     <p>Välj betalningsmetod och ange dina leveransuppgifter:</p>
-    <form method="post" action="/Cart/Checkout">
+    <form method="post" action="@Url.Action("CreateOrder", "Order")">
       <div class="form-group">
-        <label for="paymentMethod">Betalningsmetod</label>
-        <select class="form-control" id="paymentMethod" name="paymentMethod">
-          <option value="card">Kredit-/bankkort</option>
-          <option value="swish">Swish</option>
-          <option value="invoice">Faktura</option>
-        </select>
+        <label for="customerName">Namn</label>
+        <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Ange ditt namn" required>
+      </div>
+      <div class="form-group">
+        <label for="customerPhone">Telefonnummer</label>
+        <input type="tel" class="form-control" id="customerPhone" name="customerPhone" placeholder="Ange ditt telefonnummer" required>
       </div>
       <div class="form-group">
         <label for="deliveryAddress">Leveransadress</label>
-        <input type="text" class="form-control" id="deliveryAddress" name="deliveryAddress"
-          placeholder="Ange din adress">
+        <input type="text" class="form-control" id="deliveryAddress" name="deliveryAddress" placeholder="Ange din adress" required>
       </div>
-      <!-- Du kan även lägga till fler fält, t.ex. telefonnummer eller e-post -->
+      <!-- Du kan även lägga till fler fält om nödvändigt -->
       <button type="submit" class="btn btn-success">Genomför beställning</button>
     </form>
   </div>
@@ -80,5 +77,4 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

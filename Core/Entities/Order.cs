@@ -17,7 +17,7 @@ public class Order
     public int? CourierId { get; set; }
     public Courier Courier { get; set; }
 
-    public int RestaurantId { get; set; }       // FK
+    public int? RestaurantId { get; set; }       // FK
     public Restaurant Restaurant { get; set; } // Navigeringsproperty
 
     public enum OrderStatus

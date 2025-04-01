@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoodOnDelivery.Infrastructure.Repositories;
 
-public class orderItemRepository : IRepo<OrderItem>
+public class OrderItemRepository : IRepo<OrderItem>
 {
     private readonly AppDbContext _db;
 
-    public orderItemRepository (AppDbContext db)
+    public OrderItemRepository (AppDbContext db)
     {
         _db = db;
     }
@@ -18,6 +18,12 @@ public class orderItemRepository : IRepo<OrderItem>
     public async Task AddAsync(OrderItem entity)
     {
         await _db.AddAsync(entity);
+        await _db.SaveChangesAsync();
+    }
+
+    public async Task AddListAsync(List<OrderItem> entity)
+    {
+        await _db.AddRangeAsync(entity);
         await _db.SaveChangesAsync();
     }
 

@@ -9,4 +9,5 @@ public class BasketItem
     public MenuItem MenuItem { get; set; }
     public int Quantity { get; set; }
     public decimal PriceAtSelection { get; set; }
+    public int RestaurantId { get; set; }
 }

@@ -16,8 +16,12 @@ public class CustomerRepository : IRepo<Customer>
     }
     public async Task AddAsync(Customer entity)
     {
+        var customer = _db.Costumers.FirstOrDefaultAsync(c => c.PhoneNumber == entity.PhoneNumber);
+        if(customer != null)
+        {
         await _db.Costumers.AddAsync(entity);
         await _db.SaveChangesAsync();
+        }
     }
 
     public Task<bool> AnyAsync(Expression<Func<Customer, bool>> predicate)
