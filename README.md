@@ -20,9 +20,9 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 - [ ] Jag har tagit bort oanvänd kod.
 - [ ] Jag har tagit bort onödiga kommentarer.
 - [ ] Jag har formaterat min kod fint.
-- [ ] Jag har förstått hur min kod fungerar.  
+- [x] Jag har förstått hur min kod fungerar.  
   *Prova att förklara högt för dig själv vad din kod gör. Fråga dig t.ex.: "Hur går det till när jag lägger en order?" eller "Vad händer om jag försöker göra funktion X?"*
-- [ ] Jag har checkat av vilka funktionskrav jag anser att jag klarat genom att skriva ett x innanför [ ] i denna readmefil.
+- [x] Jag har checkat av vilka funktionskrav jag anser att jag klarat genom att skriva ett x innanför [ ] i denna readmefil.
 
 ---
 
@@ -30,9 +30,9 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 
 ### För G
 - [x] Användning av **Asp.Net**, **EF Core** och **SQLite**.
-- [ ] Samtliga krav för hemsidan är uppfyllda.
-- [ ] Samtliga krav för REST-APIet är uppfyllda.
-- [ ] Minst 2 av 4 systemregler implementerade.
+- [x] Samtliga krav för hemsidan är uppfyllda.
+- [x] Samtliga krav för REST-APIet är uppfyllda.
+- [x] Minst 2 av 4 systemregler implementerade.
 - [ ] Checklista för inlämning (se ovan) har genomförts.
 
 ### För VG
@@ -70,7 +70,7 @@ Besökare ska kunna:
 - [x] **Se restaurangers menyer**.
 - [x] **Välja en maträtt** som ska beställas samt ange antal.
 - [x] **Lägga en order** på vald maträtt, där totalpriset visas (summan för maten plus leveransavgift plus 5% serviceavgift).
-- [ ] **Se status för ordern** och hur lång tid det är kvar innan den levereras.
+- [x] **Se status för ordern** och hur lång tid det är kvar innan den levereras.
 
 ---
 
@@ -81,10 +81,10 @@ API:et ska fungera som ett administrationsverktyg (investeraren har för närvar
 Funktioner via REST API:
 - [x] **Registrera** nya restauranger.
 - [x] **Lägga till** maträtter till restaurangers menyer.
-- [ ] **Hämta** en lista på alla ordrar.
-- [ ] **Hämta** en lista på ordrar med en specifik status (t.ex. alla ordrar som väntar på ett bud) och för en specifik restaurang.
-- [ ] **Ändra orderstatus** på en order.
-- [ ] **Tilldela** en viss order till ett specifikt bud.
+- [x] **Hämta** en lista på alla ordrar.
+- [x] **Hämta** en lista på ordrar med en specifik status (t.ex. alla ordrar som väntar på ett bud) och för en specifik restaurang.
+- [x] **Ändra orderstatus** på en order.
+- [x] **Tilldela** en viss order till ett specifikt bud.
 
 ---
 
@@ -101,13 +101,13 @@ Funktioner via REST API:
   - [ ] Restaurangen är öppen.
   - [ ] Ordern läggs innan "Tid för sista beställning".
 
-- [ ] **Orderstatus** ska följa följande flöde:
+- [x] **Orderstatus** ska följa följande flöde:
   - `received` → `confirmed` → `courier_accepted` → `preparing` → `ready_for_pickup` → `in_transit` → `delivered`.
 
 ### Bud
 - Ett bud kan bara acceptera en order om:
-  - [ ] Inget annat bud har accepterat den redan.
-  - [ ] Orderstatus är `confirmed`.
+  - [x] Inget annat bud har accepterat den redan.
+  - [x] Orderstatus är `confirmed`.
 
 ---
 

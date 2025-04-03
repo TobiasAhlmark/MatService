@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Core.Interfaces;
+using FoodOnDelivery.Core.Services;
 using FoodOnDelivery.Infrastructure.DB;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,11 +36,20 @@ public class OrderRepository : IRepo<Order>
     public async Task<Order> GetByIdAsync(int id)
     {
         return await _db.Orders
+            .Include(o => o.Courier)
             .Include(o => o.Customer)
             .Include(o => o.OrderItems)
             .ThenInclude(oi => oi.MenuItem)
             .FirstOrDefaultAsync(o => o.Id == id)
             ?? throw new InvalidOperationException($"Order with ID {id} not found.");
+    }
+
+    public async Task<List<Order>> GetByStatus(Order.OrderStatus status, int restaurantId)
+    {
+        return await _db.Orders
+        .Include(o => o.Restaurant)
+        .Where(o => o.Status == status && o.RestaurantId == restaurantId)
+        .ToListAsync();
     }
 
     public Task UpdateAsync(Order entity)
@@ -51,12 +61,28 @@ public class OrderRepository : IRepo<Order>
         throw new NotImplementedException();
     }
 
+    public async Task<Order> UpdateOrderStatusWithApi(int orderId)
+    {
+        var order = await GetByIdAsync(orderId);
+        order.Status = await GetNextStatus(order.Status);
+
+        await _db.SaveChangesAsync();
+        return order;
+    }
+
+    public async Task UpdateOrderStatus(Order order)
+    {
+
+        order.Status = await GetNextStatus(order.Status);
+
+        await _db.SaveChangesAsync();
+
+    }
+
     public async Task<Order.OrderStatus> GetNextStatus(Order.OrderStatus currentStatus)
     {
-        // Om du har en fast ordningsföljd så kan du bara öka värdet
         int nextValue = (int)currentStatus + 1;
 
-        // Om du vill att Delivered ska vara slutet, så stanna där
         if (nextValue > (int)Order.OrderStatus.Delivered)
         {
             nextValue = (int)Order.OrderStatus.Delivered;
@@ -64,6 +90,30 @@ public class OrderRepository : IRepo<Order>
         await _db.SaveChangesAsync();
 
         return (Order.OrderStatus)nextValue;
+    }
+
+    public async Task<Order> SetOrderToCourier(int orderId, int courierId)
+    {
+        var order = await GetByIdAsync(orderId);
+        if (order == null)
+        {
+            throw new KeyNotFoundException("Order not found.");
+        }
+
+        if (order.CourierId != null)
+        {
+            throw new InvalidOperationException("A courier is already assigned to this order.");
+        }
+
+        if (order.Status != Order.OrderStatus.Confirmed)
+        {
+            throw new InvalidOperationException("Order is not in a confirmed state and cannot be assigned a courier.");
+        }
+
+        order.CourierId = courierId;
+        await _db.SaveChangesAsync();
+
+        return order;
     }
 
 

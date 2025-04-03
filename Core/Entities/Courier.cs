@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace FoodOnDelivery.Core.Entities;
 
 public class Courier
@@ -6,5 +8,6 @@ public class Courier
     public string Name { get; set; }
     public string Status { get; set; }  = "available";
 
+    [JsonIgnore]
     public List<Order> Orders { get; set; } = new();
 }

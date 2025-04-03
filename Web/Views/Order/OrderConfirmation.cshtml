@@ -1,25 +1,31 @@
 @using FoodOnDelivery.Core.Entities;
+@using FoodOnDelivery.Web.Models
 @model Order
 
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orderbekräftelse</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
+  <div id="order-sidebar">
+    <partial name="_OrderSidebar" model="new BasketViewModel { Items = new List<BasketItem>() }" />
+  </div>
   <div class="container my-5">
     <h1>Tack för din beställning!</h1>
     <p>Ditt ordernummer är: @Model.Id</p>
-    
+
     <h3>Kundinformation</h3>
     <p>Namn: @Model.Customer.Name</p>
     <p>Telefon: @Model.Customer.PhoneNumber</p>
     <p>Adress: @Model.Customer.Address</p>
-    <p>Status: @Model.Status</p>
-    
+    <p>Status: @Model.StatusMessage</p>
+
     <h3>Produkter</h3>
     <table class="table table-bordered">
       <thead class="thead-light">
@@ -27,7 +33,7 @@
           <th>Produkt</th>
           <th>Antal</th>
           <th>Pris per enhet</th>
-          <th>Summa</th>
+          <!-- Ta bort enskilda item-summor -->
         </tr>
       </thead>
       <tbody>
@@ -37,11 +43,17 @@
             <td>@item.MenuItem.Name</td>
             <td>@item.Quantity</td>
             <td>@item.PriceAtOrderTime.ToString("c")</td>
-            <td>@item.PriceAtOrderTime.ToString("c")</td>
           </tr>
         }
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" class="text-right"><strong>Total summa:</strong></td>
+          <td>@Model.TotalPrice.ToString("c")</td>
+        </tr>
+      </tfoot>
     </table>
   </div>
 </body>
+
 </html>

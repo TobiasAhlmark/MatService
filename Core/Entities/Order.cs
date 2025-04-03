@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace FoodOnDelivery.Core.Entities;
 
 public class Order
@@ -17,8 +19,23 @@ public class Order
     public int? CourierId { get; set; }
     public Courier Courier { get; set; }
 
-    public int RestaurantId { get; set; }       // FK
+    public int RestaurantId { get; set; }
+    [JsonIgnore]       // FK
     public Restaurant Restaurant { get; set; } // Navigeringsproperty
+    public string RestaurantName => Restaurant.Name;
+
+    public string StatusMessage =>
+    Status switch
+    {
+        OrderStatus.Received => "Order mottagen",
+        OrderStatus.Confirmed => "Accepterad, leverans inom 45 min",
+        OrderStatus.CourierAccepted => "Budet har accepterat ordern",
+        OrderStatus.Preparing => "Ordern förbereds",
+        OrderStatus.ReadyForPickup => "Redo för upphämtning",
+        OrderStatus.InTransit => "Ordern är på väg",
+        OrderStatus.Delivered => "Ordern är levererad",
+        _ => "Okänd status"
+    };
 
     public enum OrderStatus
     {

@@ -64,7 +64,9 @@ public class CustomerRepository : IRepo<Customer>
     public async Task<Customer> GetCustomerByPhoneNumberasync(int phoneNumber)
     {
         return await _db.Costumers
-            .Include(o => o.Orders)
-            .FirstOrDefaultAsync(c => c.PhoneNumber == phoneNumber);
+        .Include(c => c.Orders)
+            .ThenInclude(o => o.OrderItems)
+                .ThenInclude(oi => oi.MenuItem)
+        .FirstOrDefaultAsync(c => c.PhoneNumber == phoneNumber);
     }
 }

@@ -17,7 +17,6 @@ namespace FoodOnDelivery.Infrastructure.DB
         public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Courier> Couriers { get; set; }
-        public DbSet<Payment> Payments { get; set; }
         public DbSet<OpeningHours> OpeningHours { get; set; }
      
         protected override void OnModelCreating(ModelBuilder modelBuilder)

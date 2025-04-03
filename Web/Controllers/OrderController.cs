@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Infrastructure.Repositories;
+using FoodOnDelivery.Core.Services;
 
 namespace Web.Controllers;
 
@@ -12,6 +13,7 @@ public class OrderController : Controller
     private readonly OrderRepository _orderRepo;
     private readonly CustomerRepository _costumerRepo;
     private readonly OrderItemRepository _orderItemRepo;
+    private readonly OrderService _orderService;
 
     public OrderController
     (
@@ -50,7 +52,7 @@ public class OrderController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddItem(int menuItemId, string menuItemName, decimal itemPrice, int quantity, int RestaurantId)
+    public async Task<IActionResult> AddItem(int menuItemId, string menuItemName, decimal itemPrice, int quantity, int restaurantId)
     {
         var basketJson = HttpContext.Session.GetString("Basket");
         Basket basket;
@@ -63,20 +65,24 @@ public class OrderController : Controller
             basket = JsonConvert.DeserializeObject<Basket>(basketJson);
         }
 
-        var basketItem = new BasketItem
-        {
-            MenuItemId = menuItemId,
-            Name = menuItemName,
-            Quantity = quantity,
-            PriceAtSelection = itemPrice,
-            RestaurantId = RestaurantId
-        };
+        //bool validInput = await _orderService.ValidateInput(menuItemId, menuItemName, itemPrice, quantity, restaurantId);
 
-        basket.AddItem(basketItem);
+       
+            var basketItem = new BasketItem
+            {
+                MenuItemId = menuItemId,
+                Name = menuItemName,
+                Quantity = quantity,
+                PriceAtSelection = itemPrice,
+                RestaurantId = restaurantId
+            };
 
-        HttpContext.Session.SetString("Basket", JsonConvert.SerializeObject(basket));
+            basket.AddItem(basketItem);
 
-        return RedirectToAction("Index", "Order");
+            HttpContext.Session.SetString("Basket", JsonConvert.SerializeObject(basket));
+
+            return RedirectToAction("Index", "Order");
+        
     }
 
     [HttpPost]
@@ -114,7 +120,6 @@ public class OrderController : Controller
             CustomerId = orderCustomer.Id,
             OrderItems = orderItems,
             TotalPrice = basket.TotalCost,
-            CourierId = 1,
             RestaurantId = basket.RestaurantId.Value
         };
         Console.WriteLine(order.RestaurantId);
@@ -138,18 +143,13 @@ public class OrderController : Controller
             return NotFound();
         }
 
-        // if (order.Status != Order.OrderStatus.Delivered)
-        // {
-        //     order.Status = await _orderRepo.GetNextStatus(order.Status);
-        // }
-
         return View(order);
     }
 
     [HttpGet]
     public async Task<IActionResult> OrderHistory(int phoneNumber)
     {
-      
+
         var customer = await _costumerRepo.GetCustomerByPhoneNumberasync(phoneNumber);
         if (customer == null)
         {
@@ -160,6 +160,17 @@ public class OrderController : Controller
         return View(customer.Orders);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> UpdateOrderStatus(int orderId)
+    {
+        var order = await _orderRepo.GetByIdAsync(orderId);
+        if (order == null)
+        {
+            return NotFound();
+        }
+        await _orderRepo.UpdateOrderStatus(order);
 
+        return RedirectToAction("OrderHistory", new { phoneNumber = order.Customer.PhoneNumber });
+    }
 }
 

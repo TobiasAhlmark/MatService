@@ -1,50 +1,89 @@
 @using FoodOnDelivery.Core.Entities;
+@using FoodOnDelivery.Web.Models;
 @model List<Order>
 
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mina beställningar</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
+  <div id="order-sidebar">
+    <partial name="_OrderSidebar" model="new BasketViewModel { Items = new List<BasketItem>() }" />
+  </div>
   <div class="container my-5">
     <h1>Visa mina beställningar</h1>
     <form method="get" action="@Url.Action("OrderHistory", "Order")">
       <div class="form-group">
         <label for="phoneNumber">Telefonnummer</label>
-        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Ange ditt telefonnummer" required>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+          placeholder="Ange ditt telefonnummer" required>
       </div>
       <button type="submit" class="btn btn-primary">Hämta ordrar</button>
     </form>
-    
-    @if(Model != null && Model.Any())
+
+    @if (Model != null && Model.Any())
     {
       <hr />
-      <table class="table table-bordered">
-        <thead class="thead-light">
-          <tr>
-            <th>Ordernummer</th>
-            <th>Datum</th>
-            <th>Totalpris</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach(var order in Model)
-          {
-            <tr>
-              <td>@order.Id</td>
-              <td>@order.CreatedAt.ToLocalTime().ToString("g")</td>
-              <td>@order.TotalPrice.ToString("c")</td>
-              <td>@order.Status</td>
-            </tr>
-          }
-        </tbody>
-      </table>
+      @foreach (var order in Model)
+      {
+        <div class="card my-3">
+          <div class="card-body">
+            <h2 class="card-title">Ordernummer: @order.Id</h2>
+            <p><strong>Status:</strong> @order.StatusMessage</p>
+            <p><strong>Datum:</strong> @order.CreatedAt.ToLocalTime().ToString("g")</p>
+
+            <h3>Kundinformation</h3>
+            <p><strong>Namn:</strong> @order.Customer.Name</p>
+            <p><strong>Telefon:</strong> @order.Customer.PhoneNumber</p>
+            <p><strong>Adress:</strong> @order.Customer.Address</p>
+
+            <h3>Produkter</h3>
+            <table class="table table-bordered">
+              <thead class="thead-light">
+                <tr>
+                  <th>Produkt</th>
+                  <th>Antal</th>
+                  <th>Pris per enhet</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var item in order.OrderItems)
+                {
+                  <tr>
+                    <td>@item.MenuItem.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.PriceAtOrderTime.ToString("c")</td>
+                    <td>
+                      <form asp-action="UpdateOrderStatus" method="post">
+                        <input type="hidden" name="orderId" value="@order.Id" />
+                        <button type="submit" class="btn btn-sm btn-warning">Uppdatera sida</button>
+                      </form>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2" class="text-right"><strong>Total summa:</strong></td>
+                  <td>@order.TotalPrice.ToString("c")</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      }
+    }
+    else
+    {
+      <p>Inga ordrar hittades. Kontrollera att du angett rätt telefonnummer.</p>
     }
   </div>
 </body>
+
 </html>
