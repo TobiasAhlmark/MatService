@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Syi72UOfebM=",
+  "dgSpecHash": "q7nc8mMCs8g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapicostumer\\webapicostumer.csproj",
+  "projectFilePath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiCostumer\\webapicostumer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hagas\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
     "C:\\Users\\hagas\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.3\\microsoft.data.sqlite.core.9.0.3.nupkg.sha512",

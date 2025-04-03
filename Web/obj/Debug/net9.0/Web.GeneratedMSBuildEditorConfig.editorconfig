@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Web
 build_property.RootNamespace = Web
-build_property.ProjectDir = C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\
+build_property.ProjectDir = c:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web
+build_property.MSBuildProjectDirectory = c:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Home/Index.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Home/Privacy.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Menu/Create.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Menu/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Menu/Index.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Order/Index.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Order/OrderConfirmation.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Order/OrderConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJDb25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Order/OrderHistory.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Order/OrderHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Restaurant/Create.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Restaurant/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Restaurant/Delete.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Restaurant/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Restaurant/Index.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Restaurant/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Restaurant/Menu.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Restaurant/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Restaurant/Update.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Restaurant/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Shared/Error.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Shared/_OrderSidebar.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Shared/_OrderSidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PcmRlclNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/_ViewImports.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/_ViewStart.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/web/Views/Shared/_Layout.cshtml]
+[c:/Users/hagas/OneDrive/Dokument/Suvnet-24/OOP2/matservice-TobiasAhlmark/Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lzldzk1rll

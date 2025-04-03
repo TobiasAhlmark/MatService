@@ -128,7 +128,7 @@ public class CustomerController : ControllerBase
     {
         // public decimal TotalPrice => OrderItems.Sum(item => item.PriceAtOrderTime * item.Quantity);
 
-        var customer = await _repoCustomer.GetCustomerByPhoneNumber(request.CostumerPhone);
+        var customer = await _repoCustomer.GetCustomerByPhoneNumberasync(request.CostumerPhone);
 
         if (customer == null)
         {
