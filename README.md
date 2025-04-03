@@ -68,8 +68,8 @@ Projektet består av **två delar**:
 Besökare ska kunna:
 - [x] **Se vilka restauranger** som finns.
 - [x] **Se restaurangers menyer**.
-- [ ] **Välja en maträtt** som ska beställas samt ange antal.
-- [ ] **Lägga en order** på vald maträtt, där totalpriset visas (summan för maten plus leveransavgift plus 5% serviceavgift).
+- [x] **Välja en maträtt** som ska beställas samt ange antal.
+- [x] **Lägga en order** på vald maträtt, där totalpriset visas (summan för maten plus leveransavgift plus 5% serviceavgift).
 - [ ] **Se status för ordern** och hur lång tid det är kvar innan den levereras.
 
 ---
@@ -79,8 +79,8 @@ Besökare ska kunna:
 API:et ska fungera som ett administrationsverktyg (investeraren har för närvarande inte råd med ett användarvänligt gränssnitt).
 
 Funktioner via REST API:
-- [ ] **Registrera** nya restauranger.
-- [ ] **Lägga till** maträtter till restaurangers menyer.
+- [x] **Registrera** nya restauranger.
+- [x] **Lägga till** maträtter till restaurangers menyer.
 - [ ] **Hämta** en lista på alla ordrar.
 - [ ] **Hämta** en lista på ordrar med en specifik status (t.ex. alla ordrar som väntar på ett bud) och för en specifik restaurang.
 - [ ] **Ändra orderstatus** på en order.

@@ -1,0 +1,50 @@
+@using FoodOnDelivery.Core.Entities;
+@model List<Order>
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina beställningar</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1>Visa mina beställningar</h1>
+    <form method="get" action="@Url.Action("OrderHistory", "Order")">
+      <div class="form-group">
+        <label for="phoneNumber">Telefonnummer</label>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Ange ditt telefonnummer" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Hämta ordrar</button>
+    </form>
+    
+    @if(Model != null && Model.Any())
+    {
+      <hr />
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Ordernummer</th>
+            <th>Datum</th>
+            <th>Totalpris</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach(var order in Model)
+          {
+            <tr>
+              <td>@order.Id</td>
+              <td>@order.CreatedAt.ToLocalTime().ToString("g")</td>
+              <td>@order.TotalPrice.ToString("c")</td>
+              <td>@order.Status</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </div>
+</body>
+</html>

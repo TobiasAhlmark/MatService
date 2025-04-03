@@ -8,6 +8,10 @@ public class Basket
 {
     public List<BasketItem> Items { get; set; } = new List<BasketItem>();
     public int? RestaurantId { get; set; }
+    public decimal SubTotal => Items.Sum(item => item.Quantity * item.PriceAtSelection);
+    public decimal ServiceFee => SubTotal * 0.05m;
+    public decimal DeliveryFee => 50m;
+    public decimal TotalCost => SubTotal + ServiceFee + DeliveryFee;
 
     public void AddItem(BasketItem newItem)
     {
@@ -35,13 +39,4 @@ public class Basket
         }
     }
 
-    public decimal GetTotalCost()
-    {
-        return Items.Sum(i => i.Quantity * i.PriceAtSelection);
-    }
-
-    public List<BasketItem> GetCurrentBasketItems()
-    {
-        return Items;
-    }
 }

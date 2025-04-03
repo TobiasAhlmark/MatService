@@ -15,8 +15,8 @@ public class OrderController : Controller
 
     public OrderController
     (
-        Basket basket, 
-        OrderRepository orderRepository, 
+        Basket basket,
+        OrderRepository orderRepository,
         CustomerRepository customerRepository,
         OrderItemRepository orderItemRepository
     )
@@ -45,7 +45,7 @@ public class OrderController : Controller
         {
             Items = basket.Items
         };
-        
+
         return View(viewmodel);
     }
 
@@ -79,53 +79,54 @@ public class OrderController : Controller
         return RedirectToAction("Index", "Order");
     }
 
-[HttpPost]
-public async Task<IActionResult> CreateOrder(string customerName, int customerPhone, string deliveryAddress)
-{
-    var basketJson = HttpContext.Session.GetString("Basket");
-    if (string.IsNullOrEmpty(basketJson))
+    [HttpPost]
+    public async Task<IActionResult> CreateOrder(string customerName, int customerPhone, string deliveryAddress)
     {
-        return RedirectToAction("Index", "Order");
+        var basketJson = HttpContext.Session.GetString("Basket");
+        if (string.IsNullOrEmpty(basketJson))
+        {
+            return RedirectToAction("Index", "Order");
+        }
+
+        var basket = JsonConvert.DeserializeObject<Basket>(basketJson);
+
+        foreach (var item in basket.Items)
+        {
+            Console.WriteLine($"Id = {item.MenuItemId} - Quantity = {item.Quantity}");
+        }
+        var customer = new Customer
+        {
+            Name = customerName,
+            PhoneNumber = customerPhone,
+            Address = deliveryAddress
+        };
+        var orderCustomer = await _costumerRepo.AddAsyncWithResponse(customer);
+
+        var orderItems = basket.Items.Select(item => new OrderItem
+        {
+            MenuItemId = item.MenuItemId,
+            Quantity = item.Quantity,
+            PriceAtOrderTime = item.PriceAtSelection
+        }).ToList();
+
+        var order = new Order
+        {
+            CustomerId = orderCustomer.Id,
+            OrderItems = orderItems,
+            TotalPrice = basket.TotalCost,
+            CourierId = 1,
+            RestaurantId = basket.RestaurantId.Value
+        };
+        Console.WriteLine(order.RestaurantId);
+        Console.WriteLine(order.CustomerId);
+
+        Console.WriteLine($"courier = {order.CourierId} - customerId = {order.CustomerId} - restaurangId = {order.RestaurantId}");
+        await _orderRepo.AddAsync(order);
+
+        HttpContext.Session.Remove("Basket");
+
+        return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
     }
-
-    var basket = JsonConvert.DeserializeObject<Basket>(basketJson);
-
-    foreach (var item in basket.Items)
-    {
-        Console.WriteLine($"Id = {item.MenuItemId} - Quantity = {item.Quantity}");
-    }
-    var customer = new Customer
-    {
-        Name = customerName,
-        PhoneNumber = customerPhone,
-        Address = deliveryAddress
-    };
-    var orderCustomer = await _costumerRepo.AddAsyncWithResponse(customer);
-    
-    var orderItems = basket.Items.Select(item => new OrderItem
-    {
-        MenuItemId = item.MenuItemId,
-        Quantity = item.Quantity,
-        PriceAtOrderTime = item.PriceAtSelection
-    }).ToList();
-
-    var order = new Order
-    {
-        CustomerId = orderCustomer.Id,
-        OrderItems = orderItems,
-        CourierId = 1,
-        RestaurantId = basket.RestaurantId.Value
-    };
-    Console.WriteLine(order.RestaurantId);
-    Console.WriteLine(order.CustomerId);
-
-    Console.WriteLine($"courier = {order.CourierId} - customerId = {order.CustomerId} - restaurangId = {order.RestaurantId}");
-    await _orderRepo.AddAsync(order);
-
-    HttpContext.Session.Remove("Basket");
-
-    return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
-}
 
     [HttpGet]
     public async Task<IActionResult> OrderConfirmation(int orderId)
@@ -134,10 +135,31 @@ public async Task<IActionResult> CreateOrder(string customerName, int customerPh
 
         if (order == null)
         {
-            return View(order);
+            return NotFound();
         }
+
+        // if (order.Status != Order.OrderStatus.Delivered)
+        // {
+        //     order.Status = await _orderRepo.GetNextStatus(order.Status);
+        // }
 
         return View(order);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> OrderHistory(int phoneNumber)
+    {
+      
+        var customer = await _costumerRepo.GetCustomerByPhoneNumberasync(phoneNumber);
+        if (customer == null)
+        {
+            ViewBag.Message = "Inga ordrar hittades för det angivna telefonnumret.";
+            return View(new List<Order>());
+        }
+
+        return View(customer.Orders);
+    }
+
+
 }
 

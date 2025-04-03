@@ -51,7 +51,9 @@ public class CustomerRepository : IRepo<Customer>
 
     public async Task<Customer> GetByIdAsync(int id)
     {
-        return await _db.Costumers.FirstOrDefaultAsync(c => c.Id == id);
+        return await _db.Costumers
+            .Include(o => o.Orders)
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public Task UpdateAsync(Customer entity)
@@ -59,9 +61,10 @@ public class CustomerRepository : IRepo<Customer>
         throw new NotImplementedException();
     }
 
-    public async Task<Customer> GetCustomerByPhoneNumber(int phoneNumber)
+    public async Task<Customer> GetCustomerByPhoneNumberasync(int phoneNumber)
     {
-        var customer = await _db.Costumers.FirstOrDefaultAsync(c => c.PhoneNumber == phoneNumber);
-        return customer;
+        return await _db.Costumers
+            .Include(o => o.Orders)
+            .FirstOrDefaultAsync(c => c.PhoneNumber == phoneNumber);
     }
 }

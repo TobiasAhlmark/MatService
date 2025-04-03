@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vby4usm23g</Fingerprint>
-      <Integrity>NcsmIZQnqy/SWAZevbCOoeLur0cBOTffs16+kKoQqz0=</Integrity>
+      <Fingerprint>rah632uo1x</Fingerprint>
+      <Integrity>E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\restaurant.css'))</OriginalItemSpec>

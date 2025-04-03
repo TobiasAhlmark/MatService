@@ -38,7 +38,7 @@ public class OrderRepository : IRepo<Order>
             .Include(o => o.Customer)
             .Include(o => o.OrderItems)
             .ThenInclude(oi => oi.MenuItem)
-            .FirstOrDefaultAsync(o => o.Id == id) 
+            .FirstOrDefaultAsync(o => o.Id == id)
             ?? throw new InvalidOperationException($"Order with ID {id} not found.");
     }
 
@@ -50,6 +50,21 @@ public class OrderRepository : IRepo<Order>
     {
         throw new NotImplementedException();
     }
-   
-   
+
+    public async Task<Order.OrderStatus> GetNextStatus(Order.OrderStatus currentStatus)
+    {
+        // Om du har en fast ordningsföljd så kan du bara öka värdet
+        int nextValue = (int)currentStatus + 1;
+
+        // Om du vill att Delivered ska vara slutet, så stanna där
+        if (nextValue > (int)Order.OrderStatus.Delivered)
+        {
+            nextValue = (int)Order.OrderStatus.Delivered;
+        }
+        await _db.SaveChangesAsync();
+
+        return (Order.OrderStatus)nextValue;
+    }
+
+
 }

@@ -24,7 +24,7 @@
                     <input type="hidden" name="menuItemId" value="@item.Id" />
                     <input type="hidden" name="menuItemName" value="@item.Name" />
                     <input type="hidden" name="itemPrice" value="@item.Price" />
-                    <input type="hidden" name="quantity" value="1" />
+                    <input type="number" name="quantity" value="1" min="1" />
                     <!-- Skicka med restaurantId -->
                     <input type="hidden" name="restaurantId" value="@Model.Id" />
                     <button type="submit" class="choose-button">Välj</button>

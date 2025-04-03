@@ -14,13 +14,11 @@
     <h1>Tack för din beställning!</h1>
     <p>Ditt ordernummer är: @Model.Id</p>
     
-    <h2>Orderdetaljer</h2>
-    <p>Total summa: @Model.TotalPrice.ToString("c")</p>
-    
     <h3>Kundinformation</h3>
     <p>Namn: @Model.Customer.Name</p>
     <p>Telefon: @Model.Customer.PhoneNumber</p>
     <p>Adress: @Model.Customer.Address</p>
+    <p>Status: @Model.Status</p>
     
     <h3>Produkter</h3>
     <table class="table table-bordered">
@@ -39,7 +37,7 @@
             <td>@item.MenuItem.Name</td>
             <td>@item.Quantity</td>
             <td>@item.PriceAtOrderTime.ToString("c")</td>
-            <td>@(item.Quantity * item.PriceAtOrderTime).ToString("c")</td>
+            <td>@item.PriceAtOrderTime.ToString("c")</td>
           </tr>
         }
       </tbody>
