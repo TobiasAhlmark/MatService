@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj": {}
+    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj": {}
   },
   "projects": {
     "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Core\\core.csproj": {
@@ -146,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj": {
+    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj",
+        "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj",
         "projectName": "webapiadmin",
-        "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj",
+        "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj",
         "packagesPath": "C:\\Users\\hagas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\obj\\",
+        "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hagas\\AppData\\Roaming\\NuGet\\NuGet.Config"

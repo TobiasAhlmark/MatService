@@ -1638,11 +1638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj",
+      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj",
       "projectName": "webapiadmin",
-      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\webapiadmin.csproj",
+      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\webapiadmin.csproj",
       "packagesPath": "C:\\Users\\hagas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiAdmin\\obj\\",
+      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapiadmin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hagas\\AppData\\Roaming\\NuGet\\NuGet.Config"
