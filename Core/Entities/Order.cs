@@ -21,8 +21,7 @@ public class Order
 
     public int RestaurantId { get; set; }
     [JsonIgnore]       // FK
-    public Restaurant Restaurant { get; set; } // Navigeringsproperty
-    public string RestaurantName => Restaurant.Name;
+    public Restaurant Restaurant { get; set; } 
 
     public string StatusMessage =>
     Status switch

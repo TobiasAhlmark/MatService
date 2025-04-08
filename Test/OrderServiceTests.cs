@@ -15,17 +15,15 @@ public class OrderServiceTests
     {
         var mockRepo = new Mock<IRepo<Order>>();
         OrderService _orderService = new(mockRepo.Object);
-        // Arrange
+       
         int menuItemId = 9;
         string menuItemName = "Guinness";
         decimal itemPrice = 95.0m;
         int quantity = 1;
         int restaurantId = 4;
 
-        // Act
         bool result = await _orderService.ValidateInput(menuItemId, menuItemName, itemPrice, quantity, restaurantId);
 
-        // Assert
         Assert.True(result);
     }
 

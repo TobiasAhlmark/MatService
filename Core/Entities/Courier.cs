@@ -7,7 +7,4 @@ public class Courier
     public int Id { get; set; }
     public string Name { get; set; }
     public string Status { get; set; }  = "available";
-
-    [JsonIgnore]
-    public List<Order> Orders { get; set; } = new();
 }

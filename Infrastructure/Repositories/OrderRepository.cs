@@ -100,10 +100,10 @@ public class OrderRepository : IRepo<Order>
             throw new KeyNotFoundException("Order not found.");
         }
 
-        if (order.CourierId != null)
-        {
-            throw new InvalidOperationException("A courier is already assigned to this order.");
-        }
+        // if (order.CourierId != null)
+        // {
+        //     throw new InvalidOperationException("A courier is already assigned to this order.");
+        // }
 
         if (order.Status != Order.OrderStatus.Confirmed)
         {

@@ -8248,11 +8248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\Web.csproj",
       "packagesPath": "C:\\Users\\hagas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Web\\obj\\",
+      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hagas\\AppData\\Roaming\\NuGet\\NuGet.Config"

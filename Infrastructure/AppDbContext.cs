@@ -8,8 +8,7 @@ namespace FoodOnDelivery.Infrastructure.DB
             : base(options)
         {
         }
-
-        // Exempel: om du har en Restaurant-klass i Core:
+        
         public DbSet<Restaurant> Restaurants { get; set; } 
         public DbSet<Customer> Costumers { get; set; }
         public DbSet<Order> Orders { get; set; }

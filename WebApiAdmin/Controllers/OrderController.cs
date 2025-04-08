@@ -39,7 +39,7 @@ public class OrderController : ControllerBase
     [HttpPost("courier")]
     public async Task<IActionResult> SetCourierToOrder(int orderId, int courierId)
     {
-        var setCourier = _repo.SetOrderToCourier(orderId, courierId);
-        return Ok(setCourier.Status);
+        var order = await _repo.SetOrderToCourier(orderId, courierId);
+        return Ok(order);
     }
 }

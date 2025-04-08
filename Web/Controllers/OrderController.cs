@@ -20,7 +20,8 @@ public class OrderController : Controller
         Basket basket,
         OrderRepository orderRepository,
         CustomerRepository customerRepository,
-        OrderItemRepository orderItemRepository
+        OrderItemRepository orderItemRepository,
+        OrderService orderService
     )
 
     {
@@ -28,6 +29,7 @@ public class OrderController : Controller
         _orderRepo = orderRepository;
         _costumerRepo = customerRepository;
         _orderItemRepo = orderItemRepository;
+        _orderService = orderService;
     }
 
     public IActionResult Index()
@@ -65,9 +67,14 @@ public class OrderController : Controller
             basket = JsonConvert.DeserializeObject<Basket>(basketJson);
         }
 
-        //bool validInput = await _orderService.ValidateInput(menuItemId, menuItemName, itemPrice, quantity, restaurantId);
+        bool validInput = await _orderService.ValidateInput(menuItemId, menuItemName, itemPrice, quantity, restaurantId);
 
-       
+        if(!validInput)
+        {
+            throw new Exception("Fel värden angavs!");
+        }
+        else
+        {
             var basketItem = new BasketItem
             {
                 MenuItemId = menuItemId,
@@ -82,7 +89,7 @@ public class OrderController : Controller
             HttpContext.Session.SetString("Basket", JsonConvert.SerializeObject(basket));
 
             return RedirectToAction("Index", "Order");
-        
+        }
     }
 
     [HttpPost]

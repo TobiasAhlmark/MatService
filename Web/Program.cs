@@ -1,4 +1,5 @@
 using FoodOnDelivery.Core.Interfaces;
+using FoodOnDelivery.Core.Services;
 using FoodOnDelivery.Infrastructure.DB;
 using FoodOnDelivery.Infrastructure.Repositories;
 using FoodOnDelivery.Infrastructure.ServiceCollection;
@@ -28,7 +29,7 @@ internal class Program
         builder.Services.AddScoped<Basket>();
         builder.Services.AddScoped<BasketItem>();
         builder.Services.AddScoped<OrderRepository>();
-
+        builder.Services.AddScoped<OrderService>();
 
         var app = builder.Build();
 
