@@ -21,15 +21,6 @@ public class RestaurantController : Controller
         try
         {
             restaurants = await _httpClient.GetFromJsonAsync<List<Restaurant>>("http://localhost:5250/api/customer/restaurants");
-            
-            foreach (var item in restaurants)
-            {
-                Console.WriteLine($"{item.Id} - {item.Menu.Title} - hämtades");
-                foreach (var items in item.Menu.Items)
-                {
-                    Console.WriteLine($"{items.Id} - {items.Name} - hämtades");
-                }
-            }
         }
         catch (Exception ex)
         {
@@ -69,8 +60,6 @@ public class RestaurantController : Controller
         }
     }
 
-    // POST: Restaurant/Create
-    // Tar emot data från formuläret och skickar vidare till det externa API:t
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Restaurant restaurant)
@@ -84,7 +73,6 @@ public class RestaurantController : Controller
         return View(restaurant);
     }
 
-    // GET: Restaurant/Delete/5
     [HttpGet]
     public async Task<IActionResult> Delete()
     {
@@ -98,11 +86,9 @@ public class RestaurantController : Controller
             restaurants = new List<Restaurant>();
         }
 
-        // Om listan är tom skickar vi den vidare till vyn
         return View(restaurants);
     }
 
-    // POST: Restaurant/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
@@ -132,7 +118,6 @@ public class RestaurantController : Controller
             restaurants = new List<Restaurant>();
         }
 
-        // Om listan är tom skickar vi den vidare till vyn
         return View(restaurants);
     }
 
@@ -145,7 +130,6 @@ public class RestaurantController : Controller
             return View(restaurant);
         }
 
-        // Skicka PUT-anrop till API:t med uppdaterade data
         var response = await _httpClient.PutAsJsonAsync($"http://localhost:5114/api/admin/restaurant/{id}", restaurant);
         if (response.IsSuccessStatusCode)
         {

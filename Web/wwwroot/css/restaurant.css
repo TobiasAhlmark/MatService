@@ -1,20 +1,15 @@
-/* 1) Container som styr layouten för korten */
+
 .restaurant-grid {
     display: grid;
-    /* 
-       Försöker fylla flera kolumner automatiskt. 
-       Varje kort får minst 300px, sedan växer de upp till 1fr. 
-    */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;              /* Avstånd mellan korten */
-    max-width: 1200px;      /* Gör att innehållet inte breder ut sig över hela skärmen */
-    margin: 1rem auto;      /* Centrerar sektionen horisontellt och ger topp/botten-marginal */
-    padding: 0.5rem;        /* Lite inre marginal runt sektionen */
+    gap: 1rem;            
+    max-width: 1200px;    
+    margin: 1rem auto;     
+    padding: 0.5rem;        
 }
 
-/* 2) Varje restaurang-kort */
 .restaurant-card {
-    display: flex;          /* Bild + info i rad */
+    display: flex;         
     align-items: flex-start;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -23,24 +18,21 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 3) Bilden */
 .restaurant-image {
-    width: 150px;           /* Justera så korten inte blir för breda */
-    height: auto;           /* Bevara proportioner */
-    margin-right: 1rem;     /* Avstånd mellan bild och text */
+    width: 150px;           
+    height: auto;          
+    margin-right: 1rem;   
     border-radius: 8px;
 }
 
-/* 4) Text och knapp */
 .restaurant-info {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;            /* Mellanrum mellan textstycken */
+    gap: 0.3rem;           
 }
 
-/* 5) Knappen */
 .menu-button {
-    align-self: start;      /* Låt knappen ligga mot vänsterkanten */
+    align-self: start;     
     padding: 0.5rem 1rem;
     background-color: #007bff;
     color: #fff;
@@ -52,7 +44,6 @@
     background-color: #0056b3;
 }
 
-/* Container för menyvyn */
 .menu-container {
     max-width: 1200px;
     margin: 1rem auto;
@@ -60,7 +51,6 @@
     text-align: center;
 }
 
-/* Restaurangbilden */
 .restaurant-menu-image {
     width: 300px;
     height: auto;
@@ -68,7 +58,6 @@
     margin-bottom: 1rem;
 }
 
-/* Menyobjekt */
 .menu-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -101,11 +90,11 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px;          /* Bredd på sidebarnet */
-    height: 100vh;         /* Full höjd på viewporten (avlång) */
+    width: 300px;       
+    height: 100vh;      
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f9f9f9;
-    overflow-y: auto;      /* Om innehållet blir för högt, visas en scrollbar */
+    overflow-y: auto;    
 }
 

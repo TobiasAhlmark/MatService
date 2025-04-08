@@ -103,10 +103,6 @@ public class OrderController : Controller
 
         var basket = JsonConvert.DeserializeObject<Basket>(basketJson);
 
-        foreach (var item in basket.Items)
-        {
-            Console.WriteLine($"Id = {item.MenuItemId} - Quantity = {item.Quantity}");
-        }
         var customer = new Customer
         {
             Name = customerName,
@@ -129,10 +125,7 @@ public class OrderController : Controller
             TotalPrice = basket.TotalCost,
             RestaurantId = basket.RestaurantId.Value
         };
-        Console.WriteLine(order.RestaurantId);
-        Console.WriteLine(order.CustomerId);
 
-        Console.WriteLine($"courier = {order.CourierId} - customerId = {order.CustomerId} - restaurangId = {order.RestaurantId}");
         await _orderRepo.AddAsync(order);
 
         HttpContext.Session.Remove("Basket");

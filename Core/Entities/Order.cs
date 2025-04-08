@@ -20,7 +20,7 @@ public class Order
     public Courier Courier { get; set; }
 
     public int RestaurantId { get; set; }
-    [JsonIgnore]       // FK
+    [JsonIgnore]       
     public Restaurant Restaurant { get; set; } 
 
     public string StatusMessage =>

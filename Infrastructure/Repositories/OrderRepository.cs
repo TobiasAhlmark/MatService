@@ -1,7 +1,6 @@
 using System.Linq.Expressions;
 using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Core.Interfaces;
-using FoodOnDelivery.Core.Services;
 using FoodOnDelivery.Infrastructure.DB;
 using Microsoft.EntityFrameworkCore;
 
@@ -100,10 +99,10 @@ public class OrderRepository : IRepo<Order>
             throw new KeyNotFoundException("Order not found.");
         }
 
-        // if (order.CourierId != null)
-        // {
-        //     throw new InvalidOperationException("A courier is already assigned to this order.");
-        // }
+        if (order.CourierId != null)
+        {
+            throw new InvalidOperationException("A courier is already assigned to this order.");
+        }
 
         if (order.Status != Order.OrderStatus.Confirmed)
         {
@@ -115,6 +114,5 @@ public class OrderRepository : IRepo<Order>
 
         return order;
     }
-
 
 }

@@ -13,10 +13,10 @@ public class MenuItem
         MenuId = menuId;
     }
 
-    public int Id { get; set; }         // Primärnyckel
+    public int Id { get; set; }       
 
-    public string Name { get; set; }    // Namn på rätten, t.ex. "Pizza Margherita"
-    public decimal Price { get; set; }  // Pris
+    public string Name { get; set; }   
+    public decimal Price { get; set; }  
 
   
     public string Description { get; set; }

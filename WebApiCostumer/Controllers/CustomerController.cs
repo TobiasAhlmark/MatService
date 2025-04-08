@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using FoodOnDelivery.Infrastructure.Repositories;
 using FoodOnDelivery.Core.Entities;
-using FoodOnDelivery.Core.Services;
 
 namespace FoodOnDelivery.WebApiController.Costumer;
 
@@ -126,8 +125,6 @@ public class CustomerController : ControllerBase
     [HttpPost("order")]
     public async Task<IActionResult> CreateOrder(OrderRequest request)
     {
-        // public decimal TotalPrice => OrderItems.Sum(item => item.PriceAtOrderTime * item.Quantity);
-
         var customer = await _repoCustomer.GetCustomerByPhoneNumberasync(request.CostumerPhone);
 
         if (customer == null)
@@ -179,12 +176,6 @@ public class CustomerController : ControllerBase
     }
 
 }
-
-// [HttpPost("order/changestatus")]
-// public async Task<IActionResult> ChangeOrderStatus()
-// {
-            
-// }
 
 public record RestaurantResponse
 (

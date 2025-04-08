@@ -32,10 +32,6 @@ public class Basket
         else
         {
             Items.Add(newItem);
-            foreach (var item in Items)
-            {
-                Console.WriteLine(item.Quantity);
-            }
         }
     }
 

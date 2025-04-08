@@ -1,9 +1,7 @@
 using System.Linq.Expressions;
-using System.Reflection.Metadata;
 using FoodOnDelivery.Core.Entities;
 using FoodOnDelivery.Core.Interfaces;
 using FoodOnDelivery.Infrastructure.DB;
-using Microsoft.EntityFrameworkCore;
 
 namespace FoodOnDelivery.Infrastructure.Repositories;
 

@@ -17,9 +17,9 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 ## Checklista för inlämning
 - [x] Jag har läst instruktionerna noggrant.
 - [x] Jag har ställt frågor om det är något som är otydligt.
-- [ ] Jag har tagit bort oanvänd kod.
-- [ ] Jag har tagit bort onödiga kommentarer.
-- [ ] Jag har formaterat min kod fint.
+- [x] Jag har tagit bort oanvänd kod.
+- [x] Jag har tagit bort onödiga kommentarer.
+- [x] Jag har formaterat min kod fint.
 - [x] Jag har förstått hur min kod fungerar.  
   *Prova att förklara högt för dig själv vad din kod gör. Fråga dig t.ex.: "Hur går det till när jag lägger en order?" eller "Vad händer om jag försöker göra funktion X?"*
 - [x] Jag har checkat av vilka funktionskrav jag anser att jag klarat genom att skriva ett x innanför [ ] i denna readmefil.
@@ -33,7 +33,7 @@ Obligatorisk självständig inlämningsuppgift för **BY-SUVNET OOP2**
 - [x] Samtliga krav för hemsidan är uppfyllda.
 - [x] Samtliga krav för REST-APIet är uppfyllda.
 - [x] Minst 2 av 4 systemregler implementerade.
-- [ ] Checklista för inlämning (se ovan) har genomförts.
+- [x] Checklista för inlämning (se ovan) har genomförts.
 
 ### För VG
 - Samtliga G-krav ovan, plus:
@@ -91,7 +91,7 @@ Funktioner via REST API:
 ## Regler för Systemet
 
 ### Order
-- [ ] En order får bara skapas om den innehåller all nödvändig information:
+- [x] En order får bara skapas om den innehåller all nödvändig information:
   - Beställd maträtt
   - Namn
   - Telefonnummer
@@ -114,7 +114,7 @@ Funktioner via REST API:
 ## Extra VG-krav
 
 ### Hemsidan:
-- [ ] Det ska gå att lägga till **flera maträtter** till en beställning.
+- [x] Det ska gå att lägga till **flera maträtter** till en beställning.
 - [ ] Det ska vara möjligt att **avbryta en order**.
 - [ ] **Externt API:**  
   T.ex. [TheMealDB](https://www.themealdb.com/api.php) för att ladda in bilder på maträtter eller [smhis-api](#) för att lägga på en extra kostnad vid ful-väder.

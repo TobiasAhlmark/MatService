@@ -43,7 +43,4 @@ public class MenuController : Controller
         return View(menu);
     }
 
-
-
-
 }
