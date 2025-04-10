@@ -303,4 +303,4 @@ C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\Web.pdb
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\obj\Debug\net9.0\Web.genruntimeconfig.cache
 C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\Web\obj\Debug\net9.0\ref\Web.dll
-C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\clpfg4nefy-rah632uo1x.gz
+C:\Users\hagas\OneDrive\Dokument\Suvnet-24\OOP2\matservice-TobiasAhlmark\web\obj\Debug\net9.0\compressed\clpfg4nefy-gdmdelh7bp.gz

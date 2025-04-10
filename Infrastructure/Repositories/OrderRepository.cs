@@ -29,7 +29,13 @@ public class OrderRepository : IRepo<Order>
 
     public async Task<List<Order>> GetAllAsync()
     {
-        return await _db.Orders.ToListAsync();
+        return await _db.Orders
+                    .Include(c => c.Customer)
+                    .Include(c => c.Restaurant)
+                    .Include(c => c.OrderItems)
+                    .ThenInclude(c => c.MenuItem)
+                    .Include(c => c.Courier)
+                    .ToListAsync();
     }
 
     public async Task<Order> GetByIdAsync(int id)
@@ -94,6 +100,7 @@ public class OrderRepository : IRepo<Order>
     public async Task<Order> SetOrderToCourier(int orderId, int courierId)
     {
         var order = await GetByIdAsync(orderId);
+        
         if (order == null)
         {
             throw new KeyNotFoundException("Order not found.");
@@ -112,6 +119,21 @@ public class OrderRepository : IRepo<Order>
         order.CourierId = courierId;
         await _db.SaveChangesAsync();
 
+        return order;
+    }
+
+    public async Task<Order> SetOrderStatus (int orderId, Order.OrderStatus status)
+    {
+        var order = await GetByIdAsync(orderId);
+        if(order.Status == status)
+        {
+            return order;
+        }
+        else
+        {
+            order.Status = status;
+        }
+        await _db.SaveChangesAsync();
         return order;
     }
 

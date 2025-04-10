@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZwpgthitLsxYQsmr8f2DHXlg8c3KolliZgYWnGZMpCo=",
+  "Hash": "UE+B9Gnxe+aGVhzRwVIMJmQwqweBvO4vm5L4DEw6raY=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -437,12 +437,12 @@
       "OriginalItemSpec": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-rah632uo1x.gz",
+      "Identity": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-gdmdelh7bp.gz",
       "SourceId": "Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Web",
-      "RelativePath": "css/restaurant#[.{fingerprint=rah632uo1x}]?.css.gz",
+      "RelativePath": "css/restaurant#[.{fingerprint=gdmdelh7bp}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -451,8 +451,8 @@
       "RelatedAsset": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\css\\restaurant.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "74iv7zq41e",
-      "Integrity": "iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw=",
+      "Fingerprint": "twiwg6qdtk",
+      "Integrity": "ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\css\\restaurant.css"
@@ -1501,8 +1501,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rah632uo1x",
-      "Integrity": "E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=",
+      "Fingerprint": "gdmdelh7bp",
+      "Integrity": "fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\restaurant.css"
@@ -3080,12 +3080,12 @@
     },
     {
       "Route": "css/restaurant.css",
-      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-rah632uo1x.gz",
+      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-gdmdelh7bp.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000944287063"
+          "Quality": "0.001697792869"
         }
       ],
       "ResponseHeaders": [
@@ -3095,15 +3095,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1058"
+          "Value": "588"
         },
         {
           "Name": "ETag",
-          "Value": "\"iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw=\""
+          "Value": "\"ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3123,13 +3123,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=\""
+          "Value": "W/\"fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ="
+          "Value": "sha256-fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk="
         }
       ]
     },
@@ -3144,7 +3144,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2880"
+          "Value": "1983"
         },
         {
           "Name": "Content-Type",
@@ -3152,11 +3152,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=\""
+          "Value": "\"fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3166,13 +3166,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ="
+          "Value": "sha256-fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk="
         }
       ]
     },
     {
       "Route": "css/restaurant.css.gz",
-      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-rah632uo1x.gz",
+      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-gdmdelh7bp.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3181,7 +3181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1058"
+          "Value": "588"
         },
         {
           "Name": "Content-Type",
@@ -3189,11 +3189,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw=\""
+          "Value": "\"ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3211,18 +3211,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw="
+          "Value": "sha256-ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8="
         }
       ]
     },
     {
-      "Route": "css/restaurant.rah632uo1x.css",
-      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-rah632uo1x.gz",
+      "Route": "css/restaurant.gdmdelh7bp.css",
+      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-gdmdelh7bp.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000944287063"
+          "Quality": "0.001697792869"
         }
       ],
       "ResponseHeaders": [
@@ -3232,15 +3232,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1058"
+          "Value": "588"
         },
         {
           "Name": "ETag",
-          "Value": "\"iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw=\""
+          "Value": "\"ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3260,13 +3260,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=\""
+          "Value": "W/\"fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rah632uo1x"
+          "Value": "gdmdelh7bp"
         },
         {
           "Name": "label",
@@ -3274,12 +3274,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ="
+          "Value": "sha256-fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk="
         }
       ]
     },
     {
-      "Route": "css/restaurant.rah632uo1x.css",
+      "Route": "css/restaurant.gdmdelh7bp.css",
       "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\wwwroot\\css\\restaurant.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3289,7 +3289,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2880"
+          "Value": "1983"
         },
         {
           "Name": "Content-Type",
@@ -3297,11 +3297,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ=\""
+          "Value": "\"fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3311,7 +3311,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rah632uo1x"
+          "Value": "gdmdelh7bp"
         },
         {
           "Name": "label",
@@ -3319,13 +3319,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-E6hVNKWUJPtv0iUwot1pFWgJi2smL1FU6bkiKlAbYCQ="
+          "Value": "sha256-fDsNq9HKrIyMVj2UDbjiKbsn/rlbQ1s428e0tbwPxwk="
         }
       ]
     },
     {
-      "Route": "css/restaurant.rah632uo1x.css.gz",
-      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-rah632uo1x.gz",
+      "Route": "css/restaurant.gdmdelh7bp.css.gz",
+      "AssetFile": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\web\\obj\\Debug\\net9.0\\compressed\\clpfg4nefy-gdmdelh7bp.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3334,7 +3334,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1058"
+          "Value": "588"
         },
         {
           "Name": "Content-Type",
@@ -3342,11 +3342,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw=\""
+          "Value": "\"ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 07:09:57 GMT"
+          "Value": "Tue, 08 Apr 2025 07:04:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3364,7 +3364,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rah632uo1x"
+          "Value": "gdmdelh7bp"
         },
         {
           "Name": "label",
@@ -3372,7 +3372,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-iR94RaEs8zm8TX/mUKNu8Uk4LRE+MHK04aR+oRABaRw="
+          "Value": "sha256-ve/eBthW73FsUbgfKSaA0mf8+mlhvlzxF1JTMinzDZ8="
         }
       ]
     },
