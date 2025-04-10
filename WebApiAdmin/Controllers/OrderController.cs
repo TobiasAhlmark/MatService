@@ -10,9 +10,11 @@ namespace FoodOnDelivery.WebApiController.Admin;
 public class OrderController : ControllerBase
 {
     private readonly OrderRepository _repo;
-    public OrderController(OrderRepository orderRepository)
+    private readonly OrderService _service;
+    public OrderController(OrderRepository orderRepository, OrderService service)
     {
         _repo = orderRepository;
+        _service = service;
     }
 
     [HttpGet]
@@ -48,5 +50,20 @@ public class OrderController : ControllerBase
     {
         var order = await _repo.SetOrderStatus(orderId, status);
         return Ok(order);
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteOrder(int orderId)
+    {
+        var order = await _service.FindOrderObject(orderId);
+        if (order == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            await _repo.DeleteAsync(order);
+            return Ok("Order deleted successfully");
+        }
     }
 }
