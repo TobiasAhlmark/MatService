@@ -95,6 +95,7 @@ public class OrderController : Controller
     [HttpPost]
     public async Task<IActionResult> CreateOrder(string customerName, int customerPhone, string deliveryAddress)
     {
+        Console.WriteLine(customerPhone);
         var basketJson = HttpContext.Session.GetString("Basket");
         if (string.IsNullOrEmpty(basketJson))
         {

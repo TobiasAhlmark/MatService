@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj": {}
+    "c:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj": {}
   },
   "projects": {
     "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Core\\core.csproj": {
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj": {
+    "c:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj",
+        "projectUniqueName": "c:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj",
         "projectName": "infrastructure",
-        "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj",
+        "projectPath": "c:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\infrastructure.csproj",
         "packagesPath": "C:\\Users\\hagas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\obj\\",
+        "outputPath": "c:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hagas\\AppData\\Roaming\\NuGet\\NuGet.Config"

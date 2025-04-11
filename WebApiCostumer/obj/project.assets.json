@@ -1638,11 +1638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapicostumer\\webapicostumer.csproj",
+      "projectUniqueName": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiCostumer\\webapicostumer.csproj",
       "projectName": "webapicostumer",
-      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapicostumer\\webapicostumer.csproj",
+      "projectPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiCostumer\\webapicostumer.csproj",
       "packagesPath": "C:\\Users\\hagas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\webapicostumer\\obj\\",
+      "outputPath": "C:\\Users\\hagas\\OneDrive\\Dokument\\Suvnet-24\\OOP2\\matservice-TobiasAhlmark\\WebApiCostumer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hagas\\AppData\\Roaming\\NuGet\\NuGet.Config"
